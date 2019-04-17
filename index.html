@@ -5,34 +5,43 @@
     <title>Game App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body ng-app="GameApp" ng-controller="GameController">
     <div>
-        <div>
-            Guesses Left ::{{guesses}}
+        <h1>Guess The Word</h1>
+        <div class="center">
+            <span class= "guesses">{{guesses}}</span>
         </div>
         <div>
+        <div class="left">
 <!-- ng-repeat to repeat each letter in seperate span -->
-            Your Incorrect Guesses :: <span ng-repeat='letter in incorrectLettersChosen'>
+<i class="fa fa-thumbs-down  red" style="font-size:48px;color:red"></i> 
+
+ <span ng-repeat='letter in incorrectLettersChosen'>
                 {{letter}}
             </span>
+            
         </div>
-        <div>
-            Your Correct Guesses :: <span ng-repeat='letter in correctLettersChosen'>
+        <div class="letter">
+            <i class="fa fa-thumbs-up green" style="font-size:48px;color:rgb(69, 136, 89)"></i> 
+             <span ng-repeat='letter in correctLettersChosen'>
                     {{letter}}
                 </span>
 
         </div>
 
-        <div>You should guess : {{displayWord}}</div>
-        <div>
-            <div>
-                <!-- ng-model to conect the index with controller so any thhing the user type it goes to controller -->
+        <div class="hidden"> {{displayWord}}</div>
+        <div class="inputD">
                 <input type="text" name="guess" ng-model="input.letter">
+            </div>
+
+            <div class="btn">
+                <!-- ng-model to conect the index with controller so any thhing the user type it goes to controller -->
                 <button ng-click="letterChosen()">submit</button>
             </div>
-        </div>
     </div>
 </body>
 

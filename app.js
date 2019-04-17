@@ -2,7 +2,7 @@ var app = angular.module("GameApp",[]);
 //create the controller then we connect it with 
 // index.html
 app.controller("GameController",['$scope','$timeout',function($scope, $timeout){
-    var words = ["rat","mat","bat","cat"]
+    var words = ["remember","forget","move","cat"]
     $scope.incorrectLettersChosen=[];
     $scope.correctLettersChosen=[];
     $scope.guesses=6;
