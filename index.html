@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="GameApp" ng-controller="GameController">
+    <div>
+        <div>
+            Guesses Left ::{{guesses}}
+        </div>
+        <div>
+<!-- ng-repeat to repeat each letter in seperate span -->
+            Your Incorrect Guesses :: <span ng-repeat='letter in incorrectLettersChosen'>
+                {{letter}}
+            </span>
+        </div>
+        <div>
+            Your Correct Guesses :: <span ng-repeat='letter in correctLettersChosen'>
+                    {{letter}}
+                </span>
+
+        </div>
+
+        <div>You should guess : {{displayWord}}</div>
+        <div>
+            <div>
+                <!-- ng-model to conect the index with controller so any thhing the user type it goes to controller -->
+                <input type="text" name="guess" ng-model="input.letter">
+                <button ng-click="letterChosen()">submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
